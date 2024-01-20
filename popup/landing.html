@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/popup.css">
+  </head>
+  <body>
+    <div hidden id="landingContent">
+      <button id="startSession">Start Session</button>
+      <button>View Forest</button>
+      <button id="modifyBlacklist">Modify BlackList</button>
+    </div>
+    <div hidden id="currentSession">
+      <txt>Tree</txt>
+      <txt id="remaining" >Remaining Time:</txt>
+      <txt>Elapsed Time</txt>
+      <txt>Modify BlackList</txt>
+      <!--TODO add pause functionality
+        If we pause, session will stay with this content visible
+      <div hidden id="sessionRunning">
+        <button id="pauseSession" >Pause Session</button>
+      </div>
+      <div hidden id="currentSessionPaused">
+        <button id="restartSession">Restart Session</button>
+      </div> -->
+      <button id="endSession">End Session</button>
+    </div>
+    <div hidden id="sessionComplete">
+      <txt>Good Job!</txt>
+      <txt>Tree</txt>
+      <button id="addToLibrary">Add Tree to library</button>
+      <button id="return">Not this time</button>
+    </div>
+    <script src="landing.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "ProductiviTree",
+  "version": "1.0",
+
+  "description": "Improve your productivity.",
+
+  "icons": {
+    "48":"/images/start-c.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs", 
+    "storage", 
+    "alarms"
+  ],
+
+  "browser_action":{
+    "default_icon":"/images/start-c.png",
+    "default_title":"ProductiviTree",
+    "default_popup": "/popup/landing.html"
+  }
+  
+  
+}

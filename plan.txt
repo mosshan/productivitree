@@ -1,0 +1,26 @@
+- add extension to browser
+- not in active session
+    - click toolbar button
+        - start session
+        - view forest
+        - change blacklist
+- in active session
+    - blacklist site opened or stop session chosen
+      - session stops
+          - tree and stats saved
+      - notification
+    - click toolbar 
+      - show current tree, elapsed time, rem time
+      - options to pause? or stop session
+
+
+
+starting pt
+- popup shows up on click showing not in active session buttons
+- able to start and stop tree generation
+
+
+- when start session, set alarm to chosen time
+- while alarm exists:
+  - show active session page
+- otheriwse, show landing page
