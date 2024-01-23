@@ -1,26 +1,73 @@
-- add extension to browser
-- not in active session
-    - click toolbar button
-        - start session
-        - view forest
-        - change blacklist
-- in active session
-    - blacklist site opened or stop session chosen
-      - session stops
-          - tree and stats saved
-      - notification
-    - click toolbar 
-      - show current tree, elapsed time, rem time
-      - options to pause? or stop session
+Current Plan:
+- Work on timer operations:
+  - Setting timers & keeping them persistent btwn tabs
+  - When I close all tabs, stop the timer & save its state
+
+- Change Current Session page to sidebar
 
 
 
-starting pt
-- popup shows up on click showing not in active session buttons
-- able to start and stop tree generation
+State Flow: (multiple start state options)
+Landing -> Start Session -> Settings for Session -> Current Session 
+Landing -> Manage Blacklist -> Landing
+Landing -> Forest -> View Trees
+Current Session -> Session Ended -> Landing
+Session Ended -> Landing
 
 
-- when start session, set alarm to chosen time
-- while alarm exists:
-  - show active session page
-- otheriwse, show landing page
+
+
+Feature Decisions/ Questions
+  How should blacklist be changed?
+  -MVP: One blacklist and it can be managed via landing page
+  -Future: Multiple blacklists, under different labels. Choose btwn when starting session. 
+    - Manage blacklists via landing page
+
+
+  How Should Tree Generation Operate?
+  - How do I ensure differing trees? / How many choice options generate different enough fractal trees?
+    - Will randomizing btwn these choices work?
+  - Current Plan: 
+    - Depending on the length of the focus session chosen the final tree will be more or less complex ( more complex for longer focus)
+    - Tree graphics are generated slowly to encompass full time of timer
+      - When a session is stopped, either manually or due to browser being closed/ blacklist site being visited, save static version of created graphic
+          - Give user option to put it in their library
+      - When Pause is implemented: Session should be saved in a way we can continue tree generation
+
+  Fixed Time Options for Sessions or Manual Entry of Any Time?
+  - MVP: Depends on how tree generation goes
+    - Ideally a more complex tree will be generated from a longer focus session
+    - Maybe the variables to create the tree could be partially seeded based on time of session?
+      - Need to verify there are options to have same time length while not generating too similar of a tree
+
+  Should it prevent someone from going to blacklisted pages or just warn them session will be ended?
+  - MVP: warn them
+  - Future Version: 
+    - Allow user to decide what it should do when starting the session
+
+
+  What if someone was in an active session and then closed the browser?
+  - don't want them to lose the progress they made 
+  - Min Viable Product: 
+    - session should be stopped and saved
+    - when they reopen browser, if they click on the extension, 
+      it should show a page asking them if they want to save the tree from the session
+  - Future Version:
+    - When pause is implemented:
+      - Closing browser in session should pause the session vs stop, allowing them to continue the session
+
+Later Features
+  Pausing:
+  - pause should save time left and a static version of what was generated on the canvas to local storage and variables which generated tree
+    - on unpause, should go through graphic generation up to current state in static version then "grow" slowly during rest of timer length
+      - need to determine way to save spot where graphics generation paused - in the code
+
+  Minimizing Sidebar during active session 
+  - If I'm focusing, I might not want smthn taking up screen space
+  - Best way to notify of something when minimized?
+    - if the session ends or someone is navigating 
+
+  Multiple Blacklist lists
+
+  Statistics of focus Sessions
+  - how long total, when do you focus, which sites most commonly break your focus, etc

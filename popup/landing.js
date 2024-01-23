@@ -43,7 +43,7 @@ function inSession(){
   landingContent.style.display = 'none'
   currentSession.style.display = 'block'
   sessionComplete.style.display = 'none'
-  drawTree(300, 500, -90, depth, 7)
+  //drawTree(300, 500, -90, depth, 7)
   endSession = document.getElementById("endSession")
   endSession.addEventListener("click", sessionDone)
 }
