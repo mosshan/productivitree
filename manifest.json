@@ -9,16 +9,14 @@
     "48":"/images/start-c.png"
   },
   "permissions": [
-    "activeTab",
     "tabs", 
-    "storage", 
-    "alarms"
+    "storage"
   ],
 
-  "browser_action":{
+  "sidebar_action":{
     "default_icon":"/images/start-c.png",
     "default_title":"ProductiviTree",
-    "default_popup": "/popup/landing.html"
+    "default_panel": "/sidebar/landing/landing.html"
   }
   
   

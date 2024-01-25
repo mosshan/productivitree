@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../panel.css">
+  </head>
+  <body>
+    <div class="outer-wrapper">
+      <button id="startSession">Start New Session</button>
+      <div id="sessionSettings">
+        <txt class="title">Modify Session Settings</txt>
+        <div id="settings">
+          <txt>Focus Time:</txt>
+          <div id="timeEntry">
+            <input type="number" class="timeInput" name="hours" min="0" max="4">
+            <txt>Hours</txt>
+          </div>
+          <txt>Ban List</txt>
+        </div>
+        <!--include dropdown of blacklist lists-->
+      </div>
+
+      <button id="modifyBlacklist">Modify BlackList</button>
+      <txt>Insert Forest Display here</txt>
+    </div>
+    <script src="landing.js"></script>
+
+  </body>
+</html>

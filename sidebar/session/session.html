@@ -7,9 +7,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
-    <link rel="stylesheet" href="/popup.css">
+    <link rel="stylesheet" href="../panel.css">
   </head>
   <body>
-    <txt>blacklist</txt>
+    <div id="currentSession">
+      <txt>Tree</txt>
+      <canvas id="canvas" width="500" height="500"></canvas>
+      <txt id="remaining" >Remaining Time:</txt>
+      <p id="timer"></p>
+      <txt>Elapsed Time</txt>
+      <button id="endSessionButton">End Session</button>
+    </div>
+    <script src="session.js"></script>
   </body>
 </html>
