@@ -10,53 +10,43 @@ html, body {
 }
 
 body {
-  height: 90%;
   font: caption;
-  background-color: #F4F7F8;
+  background-color: #EDFCEE;
+  padding: 8%;
 }
 
-#close {
-  width:20px;
-  height: 20px;
-  align-self: flex-end;
-}
-
-#sessionSettings {
-  width: 90%;
-  background-color: #227676;
+#main {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  padding: 10px;
+  height: 55%;
+  gap: 5%;
+  justify-content: center;
 }
 
-#settings {
-  padding: 10px;
-  flex-direction: column;
-  margin: auto;
+
+#whichSettings {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
 }
 
-.title {
-  text-align: center;
-  font-size: 1.5em;
+#displayedSettings {
+  display: none;
+  background-color: #a8e48a;
+  border: thick solid #65cc31;
 }
 
-#start {
-  width: 60%;
-  background-color: #6dbebe;
-}
 
 button {
   border: none;
+  padding: 10px;
   width: 100%;
-  margin: 3% auto;
-  padding: 4px;
   text-align: center;
-  font-size: 1.5em;
+  font-size: calc(2.5vw + 1.3vh);
   cursor: pointer;
-  background-color: #b2efef;
+  background-color: #65cc31;
 }
 
 button:hover {
-  background-color: #CFF2F2;
+  background-color: #a8e48a;
 }

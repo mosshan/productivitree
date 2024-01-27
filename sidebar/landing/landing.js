@@ -3,6 +3,10 @@ let landingPanel = browser.runtime.getURL("/sidebar/landing/landing.html");
 let resultPanel = browser.runtime.getURL("/sidebar/result/result.html");
 let sessionPanel = browser.runtime.getURL("/sidebar/session/session.html");
 
+let startSession = document.getElementById("startSession")
+let sessionSettingsButton = document.getElementById("sessionSettingsButton")
+let blacklistSettingsButton = document.getElementById("blacklistSettingsButton")
+
 let getState = browser.storage.local.get("state")
 getState.then(determineStart)
 
@@ -22,8 +26,24 @@ function determineStart(item){
 // Base state, no sessions currently active
 function landing(){
   browser.storage.local.set({"state" : "notInSession"})
-  startSession = document.getElementById("startSession")
   startSession.addEventListener("click", start)
+  sessionSettingsButton.addEventListener("click", () => { displaySettings("sessionSettingsButton")})
+  blacklistSettingsButton.addEventListener("click", () => { displaySettings("blacklistSettingsButton")})
+}
+
+function displaySettings(id){
+  document.getElementById(id).style.background = "#a8e48a";
+  document.getElementById("displayedSettings").style.display = "block"
+  if(id == "sessionSettingsButton"){
+    console.log("here2")
+    document.getElementById("sessionSettings").style.display = "block"
+    document.getElementById("blackListSettings").style.display = "none"
+    blacklistSettingsButton.style.background = "#65cc31";
+  } else{
+    document.getElementById("sessionSettings").style.display = "none"
+    document.getElementById("blackListSettings").style.display = "block"
+    sessionSettingsButton.style.background = "#65cc31";
+  }
 }
 
 // Move to Session page

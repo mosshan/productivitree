@@ -10,24 +10,28 @@
     <link rel="stylesheet" href="../panel.css">
   </head>
   <body>
-    <div class="outer-wrapper">
-      <button id="startSession">Start New Session</button>
-      <div id="sessionSettings">
-        <txt class="title">Modify Session Settings</txt>
+      <div id="main">
+        <txt>Productivitree</txt>
+        <button id="startSession">Start Session</button>
         <div id="settings">
-          <txt>Focus Time:</txt>
-          <div id="timeEntry">
-            <input type="number" class="timeInput" name="hours" min="0" max="4">
-            <txt>Hours</txt>
+          <div id="whichSettings">
+            <button id="sessionSettingsButton">Session Settings</button>
+            <button id="blacklistSettingsButton">BlackList Settings</button>
           </div>
-          <txt>Ban List</txt>
+          <div display="none" id="displayedSettings">
+            <div display="block" id="sessionSettings">
+              <txt>Display Session settings here</txt>
+            </div>
+            <div display="none" id="blackListSettings">
+              <txt>Display BlackList settings here</txt>
+            </div>
+          </div>
         </div>
-        <!--include dropdown of blacklist lists-->
+
       </div>
 
-      <button id="modifyBlacklist">Modify BlackList</button>
-      <txt>Insert Forest Display here</txt>
-    </div>
+      <txt>Forest Display</txt>
+
     <script src="landing.js"></script>
 
   </body>
