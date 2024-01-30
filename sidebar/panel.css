@@ -11,8 +11,25 @@ html, body {
 
 body {
   font: caption;
-  background-color: #EDFCEE;
+  background-color: #abedbc;
+}
+
+#tabs{
+  display: flex;
+  flex-direction: row;
+}
+
+.tabButton{
+  width: 25%;
+  font-size: calc(2.5vw + 1vh);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-left: 3px solid #abedbc;
+}
+
+#home{
   padding: 8%;
+  height: 100%;
 }
 
 #main {
@@ -24,29 +41,16 @@ body {
 }
 
 
-#whichSettings {
-  display: flex;
-  flex-direction: row;
-  gap: 2%;
-}
-
-#displayedSettings {
-  display: none;
-  background-color: #a8e48a;
-  border: thick solid #65cc31;
-}
-
-
 button {
   border: none;
-  padding: 10px;
+  padding: 3%;
   width: 100%;
   text-align: center;
   font-size: calc(2.5vw + 1.3vh);
   cursor: pointer;
-  background-color: #65cc31;
+  background-color: #21C0AD;
 }
 
 button:hover {
-  background-color: #a8e48a;
+  background-color: #5AB42D;
 }

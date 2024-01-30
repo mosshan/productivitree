@@ -4,8 +4,19 @@ let resultPanel = browser.runtime.getURL("/sidebar/result/result.html");
 let sessionPanel = browser.runtime.getURL("/sidebar/session/session.html");
 
 let startSession = document.getElementById("startSession")
-let sessionSettingsButton = document.getElementById("sessionSettingsButton")
-let blacklistSettingsButton = document.getElementById("blacklistSettingsButton")
+let homeButton = document.getElementById("homeButton")
+let forestButton = document.getElementById("forestButton")
+let statsButton = document.getElementById("statsButton")
+let settingsButton = document.getElementById("settingsButton")
+const landingButtons = [homeButton, forestButton, statsButton, settingsButton]
+
+
+let home = document.getElementById("home")
+let forest = document.getElementById("forest")
+let stats = document.getElementById("stats")
+let settings = document.getElementById("settings")
+const landingPages = [home, forest, stats, settings]
+
 
 let getState = browser.storage.local.get("state")
 getState.then(determineStart)
@@ -27,24 +38,44 @@ function determineStart(item){
 function landing(){
   browser.storage.local.set({"state" : "notInSession"})
   startSession.addEventListener("click", start)
-  sessionSettingsButton.addEventListener("click", () => { displaySettings("sessionSettingsButton")})
-  blacklistSettingsButton.addEventListener("click", () => { displaySettings("blacklistSettingsButton")})
+
+  for (const button of landingButtons){
+    button.addEventListener("click", () => { changeTab(button.id)})
+    console.log(button)
+
+  }
+
 }
 
-function displaySettings(id){
-  document.getElementById(id).style.background = "#a8e48a";
-  document.getElementById("displayedSettings").style.display = "block"
-  if(id == "sessionSettingsButton"){
-    console.log("here2")
-    document.getElementById("sessionSettings").style.display = "block"
-    document.getElementById("blackListSettings").style.display = "none"
-    blacklistSettingsButton.style.background = "#65cc31";
-  } else{
-    document.getElementById("sessionSettings").style.display = "none"
-    document.getElementById("blackListSettings").style.display = "block"
-    sessionSettingsButton.style.background = "#65cc31";
+function changeTab(id){
+  for (const page of landingPages){
+    page.style.display = "none"
   }
+  for (const button of landingButtons){
+    button.style.background = ''
+  }
+  switch(id){
+    case("forestButton"):
+      button = forestButton
+      content = forest
+      break;
+    case("settingsButton"):
+      button = settingsButton
+      content = settings
+      break;
+    case("statsButton"):
+      button = statsButton
+      content = stats
+      break;
+    default:
+      button = homeButton
+      content = home
+  }
+  content.style.display = "block"
+  button.style.background = "#abedbc"
 }
+
+
 
 // Move to Session page
 function start(){

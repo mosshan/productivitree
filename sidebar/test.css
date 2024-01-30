@@ -1,0 +1,51 @@
+sidebar/panel.css* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: caption;
+  background-color: #EDFCEE;
+  padding: 8%;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  height: 55%;
+  margin: 0 0 5% 0;
+}
+
+#settings{
+  height: 90%;
+  background-color: #a8e48a;
+  border: thick solid #65cc31;
+  margin: 0 0 5% 0;
+}
+
+
+
+#whichSettings {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: calc(2.5vw + 1.3vh);
+  cursor: pointer;
+  background-color: #65cc31;
+}
+
+button:hover {
+  background-color: #a8e48a;
+}

@@ -10,28 +10,35 @@
     <link rel="stylesheet" href="../panel.css">
   </head>
   <body>
+    <div id="tabs">
+      <button class="tabButton" id="homeButton" style="background-color: #abedbc";>Home</button>
+      <button class="tabButton" id="settingsButton">Settings</button>
+      <button class="tabButton" id="forestButton">Forest</button>
+      <button class="tabButton" id="statsButton">Stats</button>
+    </div>
+    <div class="content" style="display:block" id="home">
       <div id="main">
-        <txt>Productivitree</txt>
+        <txt>Focus Time</txt>
+        <input type="number">
+        <txt>Choose your blacklist:</txt>
+        <select name="blacklists" id="blacklistDropdown">
+          <option value="socials">Socials</option>
+        </select>
         <button id="startSession">Start Session</button>
-        <div id="settings">
-          <div id="whichSettings">
-            <button id="sessionSettingsButton">Session Settings</button>
-            <button id="blacklistSettingsButton">BlackList Settings</button>
-          </div>
-          <div display="none" id="displayedSettings">
-            <div display="block" id="sessionSettings">
-              <txt>Display Session settings here</txt>
-            </div>
-            <div display="none" id="blackListSettings">
-              <txt>Display BlackList settings here</txt>
-            </div>
-          </div>
-        </div>
-
       </div>
-
-      <txt>Forest Display</txt>
-
+      <div>
+        <txt>Forest Display</txt>
+      </div>
+    </div>
+    <div class="content" style="display:none" id="settings">
+      <txt>Settings</txt>
+    </div>
+    <div class="content" style="display:none" id="forest">
+      <txt>Forest</txt>
+    </div>
+    <div class="content" style="display:none" id="stats">
+      <txt>Stats</txt>
+    </div>
     <script src="landing.js"></script>
 
   </body>
