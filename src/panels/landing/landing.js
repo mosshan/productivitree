@@ -1,7 +1,7 @@
 
-let landingPanel = browser.runtime.getURL("/sidebar/landing/landing.html");
-let resultPanel = browser.runtime.getURL("/sidebar/result/result.html");
-let sessionPanel = browser.runtime.getURL("/sidebar/session/session.html");
+let landingPanel = browser.runtime.getURL("/src/panels/landing/landing.html");
+let resultPanel = browser.runtime.getURL("/src/panels/result/result.html");
+let sessionPanel = browser.runtime.getURL("/src/panels/session/session.html");
 
 let startSession = document.getElementById("startSession")
 let homeButton = document.getElementById("homeButton")
@@ -53,6 +53,7 @@ function changeTab(id){
   }
   for (const button of landingButtons){
     button.style.background = ''
+    button.style.borderBottom = ''
   }
   switch(id){
     case("forestButton"):
@@ -72,7 +73,8 @@ function changeTab(id){
       content = home
   }
   content.style.display = "block"
-  button.style.background = "#abedbc"
+  button.style.background = "#d0efd8"
+  button.style.borderBottom = "none"
 }
 
 

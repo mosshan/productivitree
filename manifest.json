@@ -14,10 +14,9 @@
   ],
 
   "sidebar_action":{
-    "default_icon":"/images/start-c.png",
+    "default_icon":"/src/images/start-c.png",
     "default_title":"ProductiviTree",
-    "default_panel": "/sidebar/landing/landing.html"
+    "default_panel": "/src/panels/landing/landing.html"
   }
-  
-  
+   
 }
