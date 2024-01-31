@@ -37,12 +37,11 @@ function determineStart(item){
 // Base state, no sessions currently active
 function landing(){
   browser.storage.local.set({"state" : "notInSession"})
-  startSession.addEventListener("click", start)
+  startSession.addEventListener("click", validate)
 
   for (const button of landingButtons){
     button.addEventListener("click", () => { changeTab(button.id)})
     console.log(button)
-
   }
 
 }
@@ -77,7 +76,17 @@ function changeTab(id){
   button.style.borderBottom = "none"
 }
 
-
+function validate(){
+  let hours = document.getElementById("hours").value
+  let minutes = document.getElementById("minutes").value
+  if(minutes == "" && hours == ""){
+    alert("How long do you want to focus? Make sure to select a focus length")
+  } else{
+    alert(hours)
+    alert(minutes)
+  }
+  start
+}
 
 // Move to Session page
 function start(){
