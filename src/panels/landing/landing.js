@@ -79,13 +79,13 @@ function changeTab(id){
 function validate(){
   let hours = document.getElementById("hours").value
   let minutes = document.getElementById("minutes").value
+  console.log("here")
   if(minutes == "" && hours == ""){
     alert("How long do you want to focus? Make sure to select a focus length")
   } else{
-    alert(hours)
-    alert(minutes)
+    start()
   }
-  start
+
 }
 
 // Move to Session page

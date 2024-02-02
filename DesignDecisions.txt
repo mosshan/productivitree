@@ -1,11 +1,5 @@
-Current Plan:
-- Work on timer operations:
-  - Setting timers & keeping them persistent btwn tabs
-  - When I close all tabs, stop the timer & save its state
 
-- Change Current Session page to sidebar
-
-
+Page Flow and Design Decisions:
 
 State Flow: (multiple start state options)
 Landing -> Start Session -> Settings for Session -> Current Session 
