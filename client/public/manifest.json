@@ -6,7 +6,7 @@
   "description": "Improve your productivity.",
 
   "icons": {
-    "48":"/images/start-c.png"
+    "48":"/assets/start-c.png"
   },
   "permissions": [
     "tabs", 
@@ -14,9 +14,9 @@
   ],
 
   "sidebar_action":{
-    "default_icon":"/src/images/start-c.png",
+    "default_icon":"/assets/start-c.png",
     "default_title":"ProductiviTree",
-    "default_panel": "/src/panels/landing/landing.html"
+    "default_panel": "index.html"
   }
    
 }
