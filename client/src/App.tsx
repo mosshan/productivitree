@@ -1,34 +1,88 @@
-import React from 'react';
+/*global browser*/
+import React, {useState} from 'react';
 import './App.css';
 
-
-function setVisibility(buttonId: string, contentId : string){
-  const homePanel : HTMLElement | null = document.getElementById("home")
-  const settingsPanel : HTMLElement | null = document.getElementById("settings")  
-  if(contentId != null && homePanel != null && settingsPanel != null){
-    if(contentId == 'home'){
-      homePanel.style.display = "block"
-      settingsPanel.style.display ="none"
-    } else{
-      homePanel.style.display = "none"
-      settingsPanel.style.display ="block"
-    }
-
-  }
-
+function Home(){
+  return(
+    <div>
+      <p>Home</p>
+    </div>
+  )
 }
 
-function App() {
+function Settings(){
+  return(
+    <div>
+      <p>Settings</p>
+    </div>
+  )
+}
+
+function Forest(){
+  return(
+    <div>
+      <p>Forest</p>
+    </div>
+  )
+}
+
+function Stats(){
+  return(
+    <div>
+      <p>Stats</p>
+    </div>
+  )
+}
+
+// Depending on which tab is active, display that content
+function LandingContent(){
+
+  return(
+    <div>
+      <p>Test</p>
+    </div>
+  )
+}
+
+function Landing(){
+  const[content, setContent] = useState('home')
+  const[activeButton, setButton] = useState('homeButton')
+
+  function handleTabChange(buttonId: string, contentId: string){
+    setContent(contentId);
+    setButton(buttonId);
+  }
+
+  function renderContent(){
+    switch(content) {
+      case 'forest':
+        return <Forest/>
+      case 'settings':
+        return <Settings/>
+      case 'stats':
+        return <Stats/>
+      default:
+        return <Home/>
+    }
+  }
+
   return (
     <div>
-      <button id="settingsButton" onClick={() => setVisibility('settingsButton', 'settings')}>Settings</button>
-      <button id="homeButton" onClick={() => setVisibility('homeButton', 'home')}>Home</button>
-      <div id="home" style={{display: 'block'}}>
-        <p>Home</p>
+      <div className='landingTabs'>
+        <button id="homeButton" onClick={()=>handleTabChange('homeButton', 'home')}>Home</button>
+        <button id="settingsButton" onClick={()=>handleTabChange('settingsButton', 'settings')}>Settings</button>
+        <button id="forestButton" onClick={()=>handleTabChange('forestButton', 'forest')}>Forest</button>
+        <button id="statsButton" onClick={()=>handleTabChange('statsButton', 'stats')}>Stats</button>
       </div>
-      <div id="settings" style={{display: 'none'}}>
-        <p>Settings</p>
-      </div>
+      {renderContent()}
+    </div>
+  );
+}
+
+function App() {  
+  return (
+    <div>
+      <Landing/>
     </div>
   );
 }
