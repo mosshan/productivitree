@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Home(){
+function LoadingView(){
     return(
         <div>
-            <p>Home</p>
+            <p>Loading</p>
         </div>
     );
 }
 
 
-export default Home;
+export default LoadingView;

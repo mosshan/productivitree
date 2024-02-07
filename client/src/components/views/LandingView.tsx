@@ -4,10 +4,16 @@ import Home from './Home';
 import Garden from './Garden';
 import Settings from './Settings';
 import Statistics from './Statistics';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 
-function Landing(){
+// Define the prop types for the component
+interface Props {
+  change:(newVal:string) => void
+}
+
+
+function LandingView(props: Props){
     const[content, setContent] = useState('home')
   
     const handleTabChange = (event: React.SyntheticEvent, newValue: string) =>{
@@ -23,9 +29,10 @@ function Landing(){
         case 'stats':
           return <Statistics/>
         default:
-          return <Home/>
+          return <Home change = {props.change}/>
       }
     }
+
   
     return (
       <div>
@@ -33,7 +40,7 @@ function Landing(){
           <Tabs value={content} onChange={handleTabChange} aria-label="tabs for landing page" variant="fullWidth">
             <Tab value="home" label="Home"/>
             <Tab value="settings" label="Settings" />
-            <Tab value="forest" label="Forest" />
+            <Tab value="garden" label="Garden" />
             <Tab value="stats" label="Stats" />
           </Tabs>
         </div>
@@ -42,4 +49,4 @@ function Landing(){
     );
   }
 
-export default Landing;
+export default LandingView;
