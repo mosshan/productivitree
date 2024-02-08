@@ -7,7 +7,7 @@ interface Props {
 
 function Home(props : Props){
     function updateState(){
-        browser.storage.local.set({"state" : "InSession"})
+        chrome.storage.local.set({"state" : "InSession"})
         props.change('InSession')
     }
 

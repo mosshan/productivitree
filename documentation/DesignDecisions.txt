@@ -9,6 +9,37 @@ Current Session -> Session Ended -> Landing
 Session Ended -> Landing
 
 
+ How to implement saving of time?
+  - background script
+    - when window opened, add window to windows array
+    - 
+  - Landing.tsx
+    - when session is started:
+        - save state: InSession 
+            - this will cause App.tsx to render inSession view
+        - save timer length in local storage
+  - InSession.tsx
+      - start timer -> create var time remaining -> counting down to 0
+      options:
+        - user doesnt access banned sites or close browser b4 timer finishes : time remaining at 0
+            - move to Session Complete page
+                - ask user if we want to save tree:
+                    - y: 
+                        - save timer data in user info in database (for stats)
+                    - clear timer data from local storage
+                    - go back to landing
+        - user accesses banned site // Later want to make this so user is warned first when url access attempted
+            - timer stopped
+            - move to Session Complete Page
+        - MPV: user closes browser 
+    
+        - Future: user closes browser
+            - remaining time stored in local storage
+        - when we reopen browser:
+            - browser checks if we have item saved in timer
+              - if so, change state to Session Complete Page
+
+
 
 
 Feature Decisions/ Questions
@@ -49,6 +80,7 @@ Feature Decisions/ Questions
   - Future Version:
     - When pause is implemented:
       - Closing browser in session should pause the session vs stop, allowing them to continue the session
+
 
 Later Features
   Pausing:

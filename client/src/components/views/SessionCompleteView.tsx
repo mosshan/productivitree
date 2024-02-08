@@ -7,7 +7,7 @@ interface Props {
 
 function SessionCompleteView(props : Props){
     function updateState(newState: string){
-        browser.storage.local.set({"state" : newState})
+        chrome.storage.local.set({"state" : newState})
         props.change(newState)
     }
 

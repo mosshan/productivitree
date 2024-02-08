@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "ProductiviTree",
   "version": "1.0",
 
@@ -10,13 +10,11 @@
   },
   "permissions": [
     "tabs", 
-    "storage"
+    "storage", "sidePanel"
   ],
 
-  "sidebar_action":{
-    "default_icon":"/assets/start-c.png",
-    "default_title":"ProductiviTree",
-    "default_panel": "index.html"
+  "side_panel":{
+    "default_path": "index.html"
   }
    
 }

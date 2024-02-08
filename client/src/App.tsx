@@ -6,7 +6,7 @@ import InSessionView from './components/views/InSessionView';
 import SessionCompleteView from './components/views/SessionCompleteView';
 import ErrorView from './components/views/ErrorView';
 import LoadingView from './components/views/Loadingview';
-//<reference types="firefox-webext-browser" />
+//<reference types="chrome" />
 
 
 function App() {  
@@ -22,7 +22,7 @@ function App() {
   // put in async call so rendering of page (will go to loading first) occurs before this call is complete and rerenders to saved state once complete
   const fetchInitState = async () =>{
     try{
-      let initState : { [key: string]: any; } = await browser.storage.local.get("state")
+      let initState : { [key: string]: any; } = await chrome.storage.local.get("state")
       let initStateVal: string;
 
       if(initState === undefined || initState["state"] === undefined){
