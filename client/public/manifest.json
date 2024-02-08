@@ -1,20 +1,21 @@
 {
-  "manifest_version": 3,
-  "name": "ProductiviTree",
-  "version": "1.0",
-
-  "description": "Improve your productivity.",
-
-  "icons": {
-    "48":"/assets/start-c.png"
-  },
-  "permissions": [
-    "tabs", 
-    "storage", "sidePanel"
-  ],
-
-  "side_panel":{
-    "default_path": "index.html"
+    "manifest_version": 3,
+    "name": "ProductiviTree",
+    "version": "1.0",
+  
+    "description": "Improve your productivity.",
+ 
+    "permissions": [
+      "tabs", 
+      "storage", "sidePanel"
+    ],
+  
+    "side_panel":{
+      "default_path": "index.html"
+    },
+    "background": {
+        "service_worker": "./static/js/background.js"
+    }
+     
   }
-   
-}
+  

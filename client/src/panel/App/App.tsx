@@ -1,11 +1,11 @@
 
 import './App.css';
-import LandingView from './components/views/LandingView';
+import LandingView from '../components/views/LandingView';
 import React, { useState , useEffect} from 'react';
-import InSessionView from './components/views/InSessionView';
-import SessionCompleteView from './components/views/SessionCompleteView';
-import ErrorView from './components/views/ErrorView';
-import LoadingView from './components/views/Loadingview';
+import InSessionView from '../components/views/InSessionView';
+import SessionCompleteView from '../components/views/SessionCompleteView';
+import ErrorView from '../components/views/ErrorView';
+import LoadingView from '../components/views/Loadingview';
 //<reference types="chrome" />
 
 
