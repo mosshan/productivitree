@@ -44,7 +44,9 @@ function LandingView(props: Props){
             <Tab value="stats" label="Stats" />
           </Tabs>
         </div>
-        {renderContent()}
+        <div className="panel">
+          {renderContent()}
+        </div>
       </div>
     );
   }

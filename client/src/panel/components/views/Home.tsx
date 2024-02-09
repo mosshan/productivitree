@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@mui/material/Button';
 
 // Define the prop types for the component
 interface Props {
@@ -6,15 +7,13 @@ interface Props {
 }
 
 function Home(props : Props){
-    function updateState(){
-        chrome.storage.local.set({"state" : "InSession"})
-        props.change('InSession')
-    }
-
     return(
-        <div>
+        <div className='panelContent'>
             <p>Home</p>
-            <button onClick={updateState}>Start Session</button>
+            <Button onClick={() => {
+                chrome.storage.local.set({"state" : "InSession"})
+                props.change('InSession')
+            }}>Start Session</Button>
         </div>
     );
 }

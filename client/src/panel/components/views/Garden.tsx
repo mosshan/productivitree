@@ -2,7 +2,7 @@ import React from 'react';
 
 function Garden(){
     return(
-        <div>
+        <div className='panelContent'>
             <p>Garden</p>
         </div>
     );

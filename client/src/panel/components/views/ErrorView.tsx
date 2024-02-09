@@ -2,7 +2,7 @@ import React from 'react';
 
 function ErrorView(){
     return(
-        <div>
+        <div className='landingContent'>
             <p>Error</p>
         </div>
     );

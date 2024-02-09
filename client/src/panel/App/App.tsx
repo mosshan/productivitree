@@ -46,36 +46,21 @@ function App() {
   // and using 'UseSyncExternalStore' isn't a good option due to functionality of the browser storage events
   function handleState(newVal: string){
     setViewState(newVal)
+    chrome.runtime.sendMessage({greeting: "hello, state changed"});
   }
 
   function renderView(){
     switch(viewState){
       case('Landing'):
-        return (
-          <div>
-            <LandingView change = {handleState}/>
-          </div>);
+        return (<LandingView change = {handleState}/>);
       case('InSession'):
-        return (
-          <div>
-            <InSessionView change = {handleState}/>
-          </div>);
+        return (<InSessionView change = {handleState}/>);
       case('SessionComplete'):
-        return(
-          <div>
-            <SessionCompleteView change = {handleState}/>
-          </div>);
+        return(<SessionCompleteView change = {handleState}/>);
       case('Loading'):
-        return(
-          <div>
-            <LoadingView/>
-          </div>);
+        return(<LoadingView/>);
       default:
-        return(
-          <div>
-            <p>Error</p>
-          </div>
-        );
+        return(<p>Error</p>);
 
 
     }

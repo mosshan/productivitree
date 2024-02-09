@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@mui/material/Button'
 
 // Define the prop types for the component
 interface Props {
@@ -13,9 +14,11 @@ function InSessionView(props : Props){
     }
 
     return(
-        <div>
-            <p>In Session</p>
-            <button onClick={() => updateState('SessionComplete')}>End Session</button>
+        <div className='panel'>
+            <div className='panelContent'>
+                <p>In Session</p>
+                <Button onClick={() => updateState('SessionComplete')}>End Session</Button>
+            </div>
         </div>
     );
 }
