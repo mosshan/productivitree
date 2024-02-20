@@ -3,7 +3,8 @@ import Button from '@mui/material/Button';
 
 // Define the prop types for the component
 interface Props {
-    change:(newVal:string) => void
+    change:(newVal:string) => void;
+    setTime:(newTimerLength : number)=>void
 }
 
 function Home(props : Props){
@@ -12,6 +13,7 @@ function Home(props : Props){
             <p>Home</p>
             <Button onClick={() => {
                 chrome.storage.local.set({"state" : "InSession"})
+                props.setTime(60)
                 props.change('InSession')
             }}>Start Session</Button>
         </div>

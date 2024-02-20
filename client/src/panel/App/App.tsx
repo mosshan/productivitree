@@ -13,6 +13,7 @@ function App() {
 
   // our state value will determine our view
   const [viewState , setViewState] = useState('Loading')
+  const [timerLength, setTimerLength] = useState(0)
 
   useEffect(()=> {
     fetchInitState();
@@ -46,15 +47,20 @@ function App() {
   // and using 'UseSyncExternalStore' isn't a good option due to functionality of the browser storage events
   function handleState(newVal: string){
     setViewState(newVal)
-    chrome.runtime.sendMessage({greeting: "hello, state changed"});
+    chrome.runtime.sendMessage({newState : newVal})
+  }
+
+  function setInitTime(newTimerLength : number){
+    setTimerLength(newTimerLength)
+    console.log()
   }
 
   function renderView(){
     switch(viewState){
       case('Landing'):
-        return (<LandingView change = {handleState}/>);
+        return (<LandingView change = {handleState} setTime = {setInitTime}/>);
       case('InSession'):
-        return (<InSessionView change = {handleState}/>);
+        return (<InSessionView change = {handleState} timerLength = {timerLength}/>);
       case('SessionComplete'):
         return(<SessionCompleteView change = {handleState}/>);
       case('Loading'):

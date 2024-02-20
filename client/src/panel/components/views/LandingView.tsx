@@ -9,7 +9,8 @@ import React, {useState, useEffect} from 'react';
 
 // Define the prop types for the component
 interface Props {
-  change:(newVal:string) => void
+  change:(newVal:string) => void;
+  setTime:(newTimerLength:number)=>void;
 }
 
 
@@ -29,7 +30,7 @@ function LandingView(props: Props){
         case 'stats':
           return <Statistics/>
         default:
-          return <Home change = {props.change}/>
+          return <Home change = {props.change} setTime = {props.setTime}/>
       }
     }
 
