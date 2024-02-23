@@ -7,13 +7,14 @@
  
     "permissions": [
       "tabs", 
-      "storage", "sidePanel", 
+      "storage",
       "notifications"
     ],
-  
-    "side_panel":{
-      "default_path": "index.html"
+
+    "action": {
+      "default_title": "Productivitree"
     },
+    
     "background": {
         "service_worker": "./static/js/background.js"
     }
