@@ -1,7 +1,7 @@
 import { runtime } from 'webextension-polyfill'
 
 let state;
-let timerLength;
+let intervalID: NodeJS.Timer | null;
 
 runtime.onInstalled.addListener(() => {
   chrome.storage.local.set({"popupOpened":"false"})
@@ -36,14 +36,39 @@ chrome.runtime.onMessage.addListener(
       if(request.newState){
         state = request.newState
         console.log("request state is " + request.newState + "state saved as " + state)
-      }
-      else{
-        timerLength = request.timerLength
-        console.log("timer is started with length" + request.timerLength)
+        if(state == 'SessionComplete'){
+          stopTimer()
+        }
       }
 
+      if(request.timerLength){
+        let timerLength = request.timerLength
+        console.log("timer is started with length" + request.timerLength)
+        displayTimer(timerLength)
+      } 
   }
 )
+
+function displayTimer(timerLength: number){
+  chrome.action.setBadgeBackgroundColor({"color": "#FF0000"})
+        intervalID = setInterval(() => {
+          if(timerLength > 0){
+            chrome.action.setBadgeText({"text": String(timerLength)})
+            timerLength -= 1
+          } else {
+            stopTimer()
+          }
+      }, 1000);
+}
+
+function stopTimer(){
+  chrome.action.setBadgeBackgroundColor({"color": "#F4FAFC"})
+  chrome.action.setBadgeText({"text":""})
+  if(intervalID){
+    clearInterval(intervalID)
+    intervalID = null
+  }
+}
 
 
 
