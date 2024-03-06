@@ -12,3 +12,8 @@
 .panelContent {
   text-align:center;
 }
+
+#sessionTime {
+  display:flex;
+  flex-direction: row;
+}

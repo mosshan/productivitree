@@ -4,7 +4,7 @@ import Home from './Home';
 import Garden from './Garden';
 import Settings from './Settings';
 import Statistics from './Statistics';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 
 // Define the prop types for the component

@@ -20,11 +20,6 @@ chrome.action.onClicked.addListener( async () => {
       url: popupURL,
       type: "popup"
     });
-  } else {
-    console.log("tab existas")
-    tabs.forEach(function(tab) {
-      console.log("tab is" + tab + "tab url is " + tab.url + "tab pending url is " + tab.pendingUrl)
-    })
   }
 });
 
@@ -36,7 +31,7 @@ chrome.runtime.onMessage.addListener(
       if(request.newState){
         state = request.newState
         console.log("request state is " + request.newState + "state saved as " + state)
-        if(state == 'SessionComplete'){
+        if(state === 'SessionComplete'){
           stopTimer()
         }
       }
@@ -69,7 +64,5 @@ function stopTimer(){
     intervalID = null
   }
 }
-
-
 
 export {}

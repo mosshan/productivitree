@@ -20,8 +20,7 @@ function Timer(props : Props){
 
     return(
         <div className="timer">
-            <p> Timer</p>
-            <p> Current time is: </p>
+            <p>Time Remaining:</p>
             <p>{time}</p>
         </div>
     )
